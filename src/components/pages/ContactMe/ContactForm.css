@@ -1,0 +1,98 @@
+.formularioContacto {
+    color: white;
+    background: black;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    text-align: "left";
+}
+
+.form1 {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    height: 4rem;
+
+}
+
+.form1 input, .form2 input{
+    width: 100%;
+}
+
+.form2 {
+    display: flex;
+    padding: 20px;
+    height: 4rem;
+}
+
+.form3 {
+    display: flex;
+    padding: 20px;
+    height: 14rem;
+}
+
+#message {
+    height: 200px;
+    resize: none;
+}
+
+
+.form4 {
+    padding: 20px;
+    height: 4rem;
+    align-items: center;
+
+}
+
+
+.form4 button {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    font-size: 1.2rem;
+    border-style: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.4s all;
+
+}
+
+.form4 button:hover {
+    background-color: rgb(231,0,166)
+}
+
+.form4 button:active {
+    background: rgb(179, 0, 128);
+}
+
+@media (max-width: 960px){
+    .form4{
+        height: 6rem;
+    }
+
+    .form4 button{
+        margin-top: 1.5rem;
+    }
+}
+
+
+#thanks{
+    margin-top:50px;
+    margin-bottom:50px;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    transition:  0.4s all;
+}

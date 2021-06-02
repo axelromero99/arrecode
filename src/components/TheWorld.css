@@ -1,0 +1,645 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* primero */
+
+.primero {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    z-index: -5;
+}
+
+.wrapper {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding-top: 5rem;
+    display: flex;
+    flex: 1;
+}
+
+.columns {
+    display: flex;
+    flex: 1;
+}
+
+.main {
+    flex: 1;
+}
+
+.theWorldContainer {
+    padding-top: 0;
+    z-index: -30;
+}
+
+.theWorld {
+    font-size: 1rem;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+.NOT {
+    font-size: 2rem;
+    white-space: nowrap;
+    color: white;
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+
+/* segundo */
+
+.segundo {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    background-color: black;
+    z-index: -10;
+}
+
+.if {
+    position: relative;
+    z-index: -1;
+    top: -4rem;
+    font-size: 5rem;
+    color: white;
+}
+
+.openPar {
+    position: relative;
+    top: -4rem;
+    font-size: 5rem;
+    color: white;
+}
+
+.closePar {
+    position: relative;
+    top: -4rem;
+    font-size: 5rem;
+    color: white;
+}
+
+.colons {
+    position: relative;
+    top: -4rem;
+    font-size: 5rem;
+    color: white
+}
+
+.codeIt {
+    font-size: 2rem;
+    position: relative;
+    display: block;
+    top: -26rem;
+    z-index: -9;
+}
+
+.tree {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 13rem;
+    top: -100px;
+    padding-top: 0rem;
+    z-index: -5;
+}
+
+
+/* tercero */
+
+.tercero {
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    z-index: -10;
+}
+
+
+/* cuarto */
+
+.cuarto {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    background-color: black;
+}
+
+.imDeveloper {
+    font-size: 1.3rem;
+    padding-top: 6rem;
+    color: white;
+}
+
+#developer {
+    padding-top: 2rem;
+    font-size: 2.5rem;
+    mix-blend-mode: difference;
+}
+
+.quinto {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
+
+.pleaseSeeMy {
+    font-size: 1.5rem;
+    padding-top: 8rem;
+    color: black;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.botonProyectos {
+    outline: none;
+    font-size: 2rem;
+    margin: 0;
+    position: absolute;
+    border-style: none;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 6rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.botonProyectos:hover {
+    background: rgb(231, 0, 166);
+    ;
+}
+
+.botonProyectos:active {
+    background: rgb(179, 0, 128);
+}
+
+.footer-logo {
+    display: none;
+}
+
+.algoColumnMain {
+    z-index: 7;
+    position: relative;
+    top: -50rem;
+}
+
+.algoColumn {
+    width: 6rem;
+}
+
+.sexto {
+    width: 100%;
+    height: 630px;
+    position: absolute;
+    z-index: 25;
+    overflow: hidden;
+    top: 660px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.septimo {
+    /*extra1*/
+    display: none;
+}
+
+.octavo {
+    /*extra2*/
+    display: none;
+}
+
+.noveno {
+    /*extra3*/
+    display: none;
+}
+
+.decimo {
+    /*extra4*/
+    display: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+.algoColumn.left1 {
+    left: 0px;
+    padding-top: 570px;
+    top: 0;
+    position: absolute;
+}
+
+.algoColumn.left2 {
+    display: none;
+}
+
+.algoColumn.right1 {
+    display: none;
+    right: 0px;
+    padding-top: 500px;
+    top: 0;
+    position: absolute;
+}
+
+.algoColumn.right2 {
+    right: 0px;
+    padding-top: 423px;
+    top: 0;
+    position: absolute;
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.floating-slow {
+    animation-name: floating-slow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 15px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+@keyframes floating-slow {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 50px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+
+/* MOBILE images */
+
+.septimo {
+    /*extra1 jsx*/
+    display: block;
+    width: 7rem;
+    height: 200px;
+    position: absolute;
+    z-index: 25;
+    top: 160px;
+    left: -32px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+.octavo {
+    /*extra2 arrays*/
+    display: block;
+    width: 14rem;
+    height: 200px;
+    position: absolute;
+    z-index: 25;
+    top: 1430px;
+    left: -54px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+.noveno {
+    /*extra3 database*/
+    display: block;
+    width: 10rem;
+    height: 200px;
+    position: absolute;
+    z-index: 25;
+    top: 233px;
+    right: 0px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+.decimo {
+    /*extra4 big o*/
+    display: block;
+    width: 10rem;
+    height: 200px;
+    position: absolute;
+    z-index: 25;
+    top: 2100px;
+    right: 10px;
+    filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+
+/* media queries 400*/
+
+@media (min-width:400px) {
+    .septimo {
+        /*extra1 jsx*/
+        display: block;
+        width: 10rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 250px;
+        left: -32px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .octavo {
+        /*extra2 arrays*/
+        display: block;
+        width: 14rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 1430px;
+        left: -54px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .noveno {
+        /*extra3 database*/
+        display: block;
+        width: 10rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 273px;
+        right: 0px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .decimo {
+        /*extra4 big o*/
+        display: block;
+        width: 10rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 1630px;
+        right: 10px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+}
+
+
+/* media queries 600*/
+
+@media (min-width:600px) {
+    .algoColumn.right1 {
+        display: block;
+        right: 0px;
+        padding-top: 500px;
+        top: 0;
+        position: absolute;
+    }
+    .theWorld {
+        font-size: 1.5rem;
+    }
+    html {
+        font-size: 19px;
+    }
+    .tree {
+        width: 15rem;
+    }
+    .imDeveloper {
+        font-size: 1.3rem;
+        padding-top: 4.5rem;
+        color: white;
+    }
+    #developer {
+        padding-top: 2rem;
+        font-size: 4rem;
+        mix-blend-mode: difference;
+    }
+    .lastPart {
+        position: relative;
+        top: 300px;
+        z-index: -40;
+        height: 300px;
+        background-color: black;
+    }
+    .septimo {
+        /*extra1*/
+        display: block;
+        width: 14rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 250px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .octavo {
+        /*extra2*/
+        display: block;
+        width: 14rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 1430px;
+        left: 0px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .noveno {
+        /*extra3*/
+        display: block;
+        width: 14rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 175px;
+        right: 0px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .decimo {
+        /*extra4*/
+        display: block;
+        width: 14rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 1630px;
+        right: 19px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .algoColumn.left1 {
+        padding-top: 700px;
+        position: absolute;
+        top: 0;
+        left: 70px;
+    }
+    .algoColumn.left2 {
+        display: block;
+        padding-top: 500px;
+        position: absolute;
+        top: 0;
+        left: 100px;
+    }
+    .algoColumn.right1 {
+        right: 100px;
+        padding-top: 850px;
+        top: 0;
+        position: absolute;
+    }
+    .algoColumn.right2 {
+        display: block;
+        right: 70px;
+        padding-top: 500px;
+        top: 0;
+        position: absolute;
+    }
+}
+
+
+/* media queries 961*/
+
+@media (min-width:961px) {
+    .theWorld {
+        font-size: 1.5rem;
+    }
+    html {
+        font-size: 19px;
+    }
+    .tree {
+        width: 15rem;
+    }
+    .imDeveloper {
+        font-size: 1.3rem;
+        padding-top: 4.5rem;
+        color: white;
+    }
+    #developer {
+        padding-top: 2rem;
+        font-size: 4rem;
+        mix-blend-mode: difference;
+    }
+    .lastPart {
+        position: relative;
+        top: 300px;
+        z-index: -40;
+        height: 300px;
+        background-color: black;
+    }
+    .septimo {
+        /*extra1*/
+        display: block;
+        width: 25rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 50px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .octavo {
+        /*extra2*/
+        display: block;
+        width: 25rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 1430px;
+        left: 0px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .noveno {
+        /*extra3*/
+        display: block;
+        width: 25rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 175px;
+        right: 0px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .decimo {
+        /*extra4*/
+        display: block;
+        width: 18rem;
+        height: 200px;
+        position: absolute;
+        z-index: 25;
+        top: 1630px;
+        right: 19px;
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+    .algoColumn.left1 {
+        padding-top: 700px;
+        position: absolute;
+        top: 0;
+        left: 70px;
+    }
+    .algoColumn.left2 {
+        display: block;
+        padding-top: 500px;
+        position: absolute;
+        top: 0;
+        left: 100px;
+    }
+    .algoColumn.right1 {
+        right: 100px;
+        padding-top: 850px;
+        top: 0;
+        position: absolute;
+    }
+    .algoColumn.right2 {
+        display: block;
+        right: 70px;
+        padding-top: 500px;
+        top: 0;
+        position: absolute;
+    }
+}

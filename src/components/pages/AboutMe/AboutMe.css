@@ -1,0 +1,188 @@
+
+.downloadButton {
+    margin-top: 10px;
+    padding: 10px;
+
+    font-size: 1.5rem;
+    background: black;
+    color: white;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+
+    transition: 0.4s all;
+}
+
+.downloadButton:hover {
+    background: rgb(231, 0, 166);
+}
+
+.downloadButton:active {
+    background: rgb(179, 0, 128);
+}
+
+.slide-toggle {
+    outline: 1px solid black;
+    width: 100%;
+
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.slide-toggle--special .progress-bar__inner {
+    transition: all 300ms;
+}
+
+.slide-toggle--special.expanded .progress-bar__inner {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.slide-toggle__header {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    outline: 1px solid black;
+    position: relative;
+    background: black;
+}
+
+.slide-toggle__toggle {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    margin: 0;
+    position: absolute;
+    border-style: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 2.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    cursor: pointer;
+    z-index: 4;
+
+}
+
+.slide-toggle__box-inner {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.slide-toggle__box-inner p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.slide-toggle__box-inner button {
+    margin: 1rem auto 0;
+    display: block;
+}
+
+
+.progress-bar {
+    height: 2px;
+    display: inline-block;
+    flex: 1 1 0%;
+    /*position: relative;*/
+}
+
+.progress-bar__inner {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    background: white;
+    transform-origin: 0 0;
+}
+
+
+
+
+.containerCV {
+    width: 100%;
+    height: 100px;
+}
+
+.containerCV button {
+    font-size: 1.5rem;
+    margin: 0;
+    position: absolute;
+    border-style: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 2.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 1rem;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.containerAboutMe {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width:961px) {
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .containerAboutMe {
+        width: 100%;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+}
+
+.strongTech {
+    list-style-type: none;
+}
+
+.techExtra {
+    list-style-type: none;
+}
+
+.othersTech {
+    list-style-type: none;
+}
+
+.logoImportado {
+    max-width: auto;
+    max-height: 20px;
+}

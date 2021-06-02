@@ -1,0 +1,39 @@
+<svg id="TREE" xmlns="http://www.w3.org/2000/svg" width="885" height="1080" viewBox="0 0 885 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 12px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+        text-anchor: middle;
+        font-family: Verdana;
+      }
+
+      .cls-3 {
+        font-size: 11.362px;
+      }
+    </style>
+  </defs>
+  <g id="circles">
+  <circle id="arrecode" cx="359.672" cy="226.125" r="170.078"/>
+    <path id="develop" class="cls-1" d="M562.368,453.768A128.193,128.193,0,1,1,434.093,581.961,128.233,128.233,0,0,1,562.368,453.768Z"/>
+    <circle id="design" cx="157" cy="581.968" r="128.281"/>
+    <path id="web" class="cls-1" d="M738.4,801.152A111.344,111.344,0,1,1,626.978,912.5,111.381,111.381,0,0,1,738.4,801.152Z"/>
+    <path id="software" class="cls-1" d="M386.291,801.152A111.344,111.344,0,1,1,274.874,912.5,111.382,111.382,0,0,1,386.291,801.152Z"/>
+  </g>
+  <path id="Rectángulo_1" data-name="Rectángulo 1" class="cls-1" d="M566.709,614.892l37.2-18.046h0L754.929,907.735h0l-37.2,18.046h0L566.709,614.892h0Z"/>
+  <path id="Rectángulo_1_copia" data-name="Rectángulo 1 copia" class="cls-1" d="M520.945,594.707l39.069,13.524h0L446.832,934.785h0l-39.07-13.524h0L520.945,594.707h0Z"/>
+  <path id="Rectángulo_1_copia_2" data-name="Rectángulo 1 copia 2" class="cls-1" d="M288.525,241.87l39.07,13.524h0L214.412,581.948h0l-39.069-13.524h0L288.525,241.87h0Z"/>
+  <path id="Rectángulo_1_copia_3" data-name="Rectángulo 1 copia 3" class="cls-1" d="M413.336,247.92l-37.119,18.2h0L528.553,576.25h0l37.118-18.2h0L413.336,247.92h0Z"/>
+  <text id="arre_code_" data-name="arre [code]" class="cls-2" transform="translate(353.552 179.128) scale(6.571)"><tspan x="0">arre</tspan><tspan x="0" dy="14.4">[code]</tspan></text>
+  <text id="develop-2" data-name="develop" class="cls-2" transform="translate(566.681 598.72) scale(4.601)"><tspan x="0">develop</tspan></text>
+  <text id="design-2" data-name="design" class="cls-2" transform="translate(153.392 597.874) scale(4.359)"><tspan x="0">design</tspan></text>
+  <text id="web_pages" data-name="web pages" class="cls-2" transform="translate(741.394 925.534) scale(2.711)"><tspan x="0">web pages</tspan></text>
+  <text id="software-2" data-name="software" class="cls-3" transform="translate(386.297 924.914) scale(2.864)"><tspan x="0">software</tspan></text>
+</svg>
