@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -16,7 +15,7 @@ import Footer from "./components/pages/Footer/Footer";
 
 import BeatLoader from "react-spinners/BeatLoader";
 
-import { HashRouter } from 'react-router-dom'
+import { HashRouter } from "react-router-dom";
 
 library.add(fab, faCheckSquare, faCoffee);
 
@@ -43,21 +42,21 @@ function App() {
             height: "100vh",
           }}
         >
-          <BeatLoader size={30} color={"black"} loading={loading} />
+          <BeatLoader size={30} color={"black"} loading={loading} />{" "}
         </div>
       ) : (
         <HashRouter>
           <ScrollToTop />
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/Projects"  component={Projects} />
-            <Route path="/AboutMe"  component={AboutMe} />
-            <Route path="/ContactMe"  component={ContactMe} />
-          </Switch>
+            <Route exact path="/" component={Home} />{" "}
+            <Route path="/Projects" component={Projects} />{" "}
+            <Route path="/AboutMe" component={AboutMe} />{" "}
+            <Route path="/ContactMe" component={ContactMe} />{" "}
+          </Switch>{" "}
           <Footer />
         </HashRouter>
-      )}
+      )}{" "}
     </>
   );
 }

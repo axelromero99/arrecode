@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Arrecode.css';
 import './wordsPosition.css';
 
@@ -6,6 +7,8 @@ const Arrecode = () => {
 
     return (
     <div className="principal">
+
+
 
         <div className="containerArrecode">
 

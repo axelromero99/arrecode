@@ -1,4 +1,6 @@
 import React from "react";
+import Reactmos from "./reactmos";
+
 import { Button } from "../../Button";
 import SlideToggle from "react-slide-toggle";
 import Arrecode from "../../Arrecode"
@@ -15,8 +17,6 @@ import seleniumLogo from './extraLogos/selenium.png'
 import mysqLogo from './extraLogos/mysql.png'
 import cLogo from './extraLogos/c.png'
 import arduinoLogo from './extraLogos/arduino.png'
-import { FaCcVisa } from "react-icons/fa";
-
 
 const eases = window.eases;
 
@@ -41,10 +41,11 @@ function AboutMe() {
     return (
         <div style={{ textAlign: `center` }}>
 
+                <Reactmos userURL="https://api.github.com/users/axelromero99/repos" arrayOfRepos={["arrecode","readmos"]}></Reactmos>
             <Arrecode />
             <div className="containerAboutMe">
                 <p>
-                    I'm 21 years old, i live Corrientes, Argentina. I learned all kind of topics related to technology, developing and designing for almost 6 years. I started working profesionally in the area 3 years ago, and going. I love Python and React, its too much fun for me to work with those technologies.</p>
+                    I'm 21 years old, i live in Corrientes, Argentina. I learned all kind of topics related to technology, developing and designing for almost 6 years. I started working profesionally in the area 3 years ago, and going. I love Python and React, its too much fun for me to work with those technologies.</p>
                 <div className="containerCV">
                     <a href={process.env.PUBLIC_URL + '/axel-rene-romero-esquivel-cv.pdf'} download>
                         <button className="downloadButton">

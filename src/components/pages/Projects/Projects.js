@@ -1,17 +1,15 @@
 
 import React from 'react';
 
-import { projectsData } from "./data";
-import Modal from 'react-bootstrap/Modal'
 import Container from 'react-bootstrap/Container'
+import Modal from 'react-bootstrap/Modal'
+import parse from 'html-react-parser';
+import marked from 'marked';
 
+import emojisObject from './emojis';
+import "./github-markdown.css"
 
-import {
-    FaGithub
-} from "react-icons/fa";
-
-import {
-    AiFillPlayCircle} from "react-icons/ai";
+import { projectsData } from "./data";
 
 import './Projects.css';
 
@@ -21,37 +19,87 @@ class Projects extends React.Component {
         posts: [],
         open: false,
         selectedPost: null, // Keep track of the selected post
+        arrayOfRepos : [],
+        contentReadmos: "",
+
     };
 
 
-    onOpenModal = (i) => {
-        this.setState({
-            open: true,
-            selectedPost: i, // When a post is clicked, mark it as selected
-        });
+    onOpenModal = (i, post) => {
+
+        this.fetchReadme(post.github_readmos,i)
 
         let elemento = document.getElementById("root");
         elemento.classList.add("blurred");
 
     };
-
+    
+    onCloseModal = () => {
+        this.setState({ open: false });
+        let elemento = document.getElementById("root");
+        elemento.classList.remove("blurred");
+    };
 
     componentDidMount() {
         this.setState({
             posts: projectsData.slice(0, 18)
         });
+    }
 
+
+    async fetchReadme(url,i) {
+
+        const response = await fetch(url);
+        let dirty = ""
+        let clean = ""
+
+        await response.text().then(function(text) {
+
+            // In this line we use marked library to parse the MD to HTML
+            dirty = marked(text);
+
+            // Calling function to replace all the icon syntax of github with the respective icon image
+            dirty = replaceIcons(dirty);
+            
+            clean = parse(dirty);
+
+            return clean;
+        });
+
+        this.setState({
+            open: true,
+            selectedPost: i, // When a post is clicked, mark it as selected
+            contentReadmos: clean
+        });
+
+        function replaceIcons (dirty)  {
+            const regexp = RegExp(":[a-zA-Z1-9_+-]*:", "g");
+            let dirtyCopy = dirty;
+            let word;
+            let ocurrency;
+    
+            while ((ocurrency = regexp.exec(dirty)) !== null) {
+                //console.log(`Found ${ocurrency[0]} start=${ocurrency.index} end=${regexp.lastIndex}.`);
+    
+                // Delete the : of the word
+                word = ocurrency[0].slice(1, -1);
+                //console.log(word)
+                //console.log(emojisObject.emojisObject)
+                // Compare if the emoji syntax is on the emojisObject
+                if (Object.keys(emojisObject.emojisObject).includes(word)) {
+                    let emojiHTML = `<img class="githubEmoji" src="${emojisObject.emojisObject[word]}"></img>`;
+                    dirtyCopy = dirtyCopy.replace(/\:[a-zA-Z_]*\:/, emojiHTML);
+                }
+            }
+            //console.log(dirtyCopy);
+            return dirtyCopy;
+        }
     }
 
     
-    onCloseModal = () => {
-        this.setState({ open: false });
-
-        let elemento = document.getElementById("root");
-        elemento.classList.remove("blurred");
-    };
 
     renderPosts = () => {
+
         return this.state.posts.map((post, i) => {
             return (
                 <span>
@@ -66,10 +114,10 @@ class Projects extends React.Component {
                     >
                         <div className={post.autors ? "autor" : "invisible"}>
                     <h5>{
-                            post.autors.map((tag, i) => {
+                            post.autors.map((autor, i) => {
                                 return (
                                     <span className="tag">
-                                        {tag}
+                                        {autor}
                                     </span>
                                 )
                             })
@@ -105,14 +153,10 @@ class Projects extends React.Component {
                         </div>
 
                         <div className="post5">
-                            <button className="viewProjectBtn" onClick={() => this.onOpenModal(i)}>View Project</button>
+                            <button className="viewProjectBtn" onClick={() => this.onOpenModal(i,post)}>View Project</button>
                         </div>
                     </div>
-
                 </span>
-
-
-
             );
         });
     };
@@ -125,117 +169,12 @@ class Projects extends React.Component {
                 <div
                     style={{ textAlign: "center" }} 
                 >
-
                     <h1 className="tituloModal">{post.name}</h1>
                     <h3 className="descripcionModal">{post.description}</h3>
                     <img src={post.image} style={{ marginBottom: "20px", border: "solid 5px" }}></img>
 
-                        <h5>
-                        Author/s: <br></br>
-                        {
-                            post.autors.map((tag, i) => {
-                                return (
-                                    <span className="tag">
-                                        {tag}
-                                    </span>
-                                )
-                            })
-                        }
-                        </h5>
+                    <p className="descripcionLargaModal markdown-body">{this.state.contentReadmos}</p>
 
-
-                    <div style={{ width: "100%", marginBottom: "20px" }}>
-                    <h5>
-                        Tags: <br></br>
-                        {
-                            post.technologies.map((tag, i) => {
-                                return (
-                                    <span className="tag">
-                                        {tag}
-                                    </span>
-                                )
-                            })
-                        }
-                    </h5>
-                    </div>
-
-                    <p className="descripcionLargaModal" >{post.description_full}</p>
-
-                    <div style={{ marginBottom: "10px"}} className={post.aclaration ? `aclaracion` : "invisible"}>
-                        <i>
-                            Aclaration: {post.aclaration}</i>
-
-                    </div>
-
-                    <div style={{ marginBottom: "10px"}} className={post.features[0] ? `features` : "invisible"}>
-                        <ul><h5>Features:</h5>
-                        {
-                            post.features.map((feature, i) => {
-                                return (
-                                    <li >•
-                                        {feature}
-                                    </li>
-                                )
-                            })
-                        }
-                            </ul>
-
-                    </div>
-
-                    <div style={{ marginBottom: "10px"}} className={post.links[0] !== "" ? "listaLinks" : "invisible"}>
-                    <h5>Links:</h5>
-                        <ul>
-                            {
-                                post.links.map((link, i) => {
-                                    return (
-                                        <li>•
-                                            <a href={link[0]} target="_blank" rel="noreferrer" style={{ color: "#E700A6" }}>{link[1]}</a>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
-                    </div>
-
-                    <div className={post.images[0] !== "" ? "listaLinks" : "invisible"}>
-                        <h5>Images:</h5>
-                        <ul>
-                            {
-                                post.images.map((image, i) => {
-                                    return (
-                                        <li>•
-                                            <a href={process.env.PUBLIC_URL + image[0]} target="_blank" rel="noreferrer" style={{ color: "#E700A6" }}>{image[1]}</a>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
-                    </div>
-
-                    <div className="botonesProyectos">
-
-                        <button className={post.github ? `viewProjectBtn` : "invisible"}><a
-                            className="social-icon-link"
-                            href={post.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="Github"
-                        >
-                            <FaGithub size={20} /> Github
-
-                    </a></button>
-
-                        <button className={post.live_demo ? `viewProjectBtn` : "invisible"}><a
-                            className="social-icon-link"
-                            href={post.live_demo}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="liveDemo"
-                        >
-                            <AiFillPlayCircle size={20}/>
-                            Live
-                    </a></button>
-                    </div>
                 </div>
             );
         }
@@ -247,11 +186,10 @@ class Projects extends React.Component {
 
             <div className="contenido">
 
-
                 <Container className="flexbox">{this.renderPosts()}</Container>
                 <br style={{ clear: "both" }} />
 
-                <Modal show={open} onHide={this.onCloseModal} center className="centered" id="myModal">
+                <Modal show={open} onHide={this.onCloseModal}  className="centered" id="myModal">
 
                     <Modal.Header closeButton className="botonCierreModal">
                     </Modal.Header>
