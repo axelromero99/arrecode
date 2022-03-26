@@ -186,3 +186,7 @@
     max-width: auto;
     max-height: 20px;
 }
+
+.alignToLeft{
+    text-align: left;
+}
